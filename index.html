@@ -1,22 +1,79 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Somoy TV Live</title>
+  <title>Bangla Live TV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #000;
+      color: white;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 0;
+      padding: 12px;
+      background: #111;
+    }
+
+    #player {
+      width: 100%;
+      height: 60vh;
+      border: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .btn {
+      padding: 12px;
+      background: red;
+      border: none;
+      color: white;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn:focus {
+      outline: 3px solid yellow;
+    }
+  </style>
 </head>
 
-<body style="margin:0;background:black;">
+<body>
 
-<iframe
-width="100%"
-height="700"
-src="https://www.youtube.com/embed/NsKIUSuyhn4?autoplay=1"
-title="Somoy TV Live"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
+<h2>📺 Bangla Live TV</h2>
+
+<iframe id="player" src="" allowfullscreen></iframe>
+
+<div class="grid">
+
+  <button class="btn" onclick="play('https://www.youtube.com/embed/NsKIUSuyhn4')" autofocus>
+    Somoy TV
+  </button>
+
+  <button class="btn" onclick="play('https://www.youtube.com/embed/NG8EVSfqtS8')">
+    Jamuna TV
+  </button>
+
+  <button class="btn" onclick="play('https://www.youtube.com/embed/tAidYvp9xLk')">
+    Ekattor TV
+  </button>
+
+</div>
+
+<script>
+function play(url) {
+  document.getElementById("player").src = url + "?autoplay=1";
+}
+</script>
 
 </body>
-
 </html>
